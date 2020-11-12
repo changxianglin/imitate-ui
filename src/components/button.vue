@@ -1,5 +1,9 @@
 <template>
-  <button class="lin-button" :class="[`lin-button--${type}`]">
+  <button class="lin-button" :class="[`lin-button--${type}`, {
+    'is-plain': plain,
+    'is-round': round,
+    'is-circle': circle,
+  }]">
     <span><slot></slot></span>
   </button>
 </template>
@@ -11,6 +15,18 @@ export default {
     type: {
       type: String,
       default: 'default'
+    },
+    plain: {
+      type: Boolean,
+      default: false
+    },
+    round: {
+      type: Boolean,
+      default: false
+    },
+    circle: {
+      type: Boolean,
+      default: false
     }
   },
   created () {
@@ -104,5 +120,77 @@ export default {
     color: #fff;
     }
   }
+
+  // 朴素按钮样式
+.one-button.is-plain{
+  &:hover,
+  &:focus{
+    background: #fff;
+    border-color: #489eff;
+    color: #409eff;
+  }
+}
+.lin-button--primary.is-plain{
+  color: #409eff;
+  background: #ecf5ff;
+  &:hover,
+  &:focus{
+    background: #409eff;
+    border-color: #409eff;
+    color: #fff;
+  }
+}
+.lin-button--success.is-plain{
+  color: #67c23a;
+  background: #c2e7b0;
+  &:hover,
+  &:focus{
+    background: #67c23a;
+    border-color: #67c23a;
+    color: #fff;
+  }
+}
+.lin-button--info.is-plain{
+  color: #909399;
+  background: #d3d4d6;
+  &:hover,
+  &:focus{
+    background: #909399;
+    border-color: #909399;
+    color: #fff;
+  }
+}
+.lin-button--warning.is-plain{
+  color: #e6a23c;
+  background: #f5dab1;
+  &:hover,
+  &:focus{
+    background: #e6a23c;
+    border-color: #e6a23c;
+    color: #fff;
+  }
+}
+.lin-button--danger.is-plain{
+  color: #f56c6c;
+  background: #fbc4c4;
+  &:hover,
+  &:focus{
+    background: #f56c6c;
+    border-color: #f56c6c;
+    color: #fff;
+  }
+}
+
+// round属性
+.lin-button.is-round{
+  border-radius: 20px;
+  padding: 12px 23px;
+}
+
+// circle属性
+.lin-button.is-circle{
+  border-radius: 50%;
+  padding: 12px;
+}
 
 </style>
