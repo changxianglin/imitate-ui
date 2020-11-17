@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="row">
+    <!-- <div class="row">
       <lin-button disabled @click="fn">按钮</lin-button>
       <lin-button type="primary">按钮</lin-button>
       <lin-button type="sucess">按钮</lin-button>
@@ -52,7 +52,15 @@
       <lin-button plain icon="lin-icon-delete" circle type="info"></lin-button>
       <lin-button plain icon="lin-icon-delete" circle type="warning"></lin-button>
       <lin-button plain icon="lin-icon-delete" circle type="danger"></lin-button>
-    </div>
+    </div> -->
+
+    <!-- <lin-dialog title="温馨提示"></lin-dialog> -->
+
+    <lin-dialog>
+      <template v-slot:title>
+        <h3>我是标题</h3>
+      </template>
+    </lin-dialog>
   </div>
 </template>
 
