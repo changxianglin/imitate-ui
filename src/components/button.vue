@@ -3,8 +3,11 @@
     'is-plain': plain,
     'is-round': round,
     'is-circle': circle,
-  }]">
-    <span><slot></slot></span>
+  }]"
+  @click="handleClick"
+  >
+    <i v-if="icon" :class="icon"></i>
+    <span v-if="$slots.default"><slot></slot></span>
   </button>
 </template>
 
@@ -27,10 +30,20 @@ export default {
     circle: {
       type: Boolean,
       default: false
+    },
+    icon: {
+      type: String,
+      default: ''
     }
   },
   created () {
     console.log(this.type)
+  },
+
+  methods: {
+    handleClick (e) {
+      this.$emit('click', e)
+    }
   }
 }
 </script>
@@ -191,6 +204,10 @@ export default {
 .lin-button.is-circle{
   border-radius: 50%;
   padding: 12px;
+}
+
+.lin-button [class*=lin-icon-]+span{
+  margin-left: 5px;
 }
 
 </style>

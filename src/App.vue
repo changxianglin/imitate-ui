@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="row">
-      <lin-button>按钮</lin-button>
+      <lin-button @click="fn">按钮</lin-button>
       <lin-button type="primary">按钮</lin-button>
       <lin-button type="sucess">按钮</lin-button>
       <lin-button type="info">按钮</lin-button>
@@ -19,12 +19,12 @@
     </div>
 
      <div class="row">
-      <lin-button plain round>按钮</lin-button>
-      <lin-button plain round type="primary">按钮</lin-button>
-      <lin-button plain round type="sucess">按钮</lin-button>
-      <lin-button plain round type="info">按钮</lin-button>
-      <lin-button plain round type="warning">按钮</lin-button>
-      <lin-button plain round type="danger">按钮</lin-button>
+      <lin-button plain icon="lin-icon-delete" round>按钮</lin-button>
+      <lin-button plain icon="lin-icon-delete" round type="primary">按钮</lin-button>
+      <lin-button plain icon="lin-icon-delete" round type="sucess">按钮</lin-button>
+      <lin-button plain icon="lin-icon-delete" round type="info">按钮</lin-button>
+      <lin-button plain icon="lin-icon-delete" round type="warning">按钮</lin-button>
+      <lin-button plain icon="lin-icon-delete" round type="danger">按钮</lin-button>
     </div>
 
     <div class="row">
@@ -35,12 +35,25 @@
       <lin-button plain circle type="warning">按钮</lin-button>
       <lin-button plain circle type="danger">按钮</lin-button>
     </div>
+
+    <div class="row">
+      <lin-button plain icon="lin-icon-delete" circle></lin-button>
+      <lin-button plain icon="lin-icon-delete" circle type="primary"></lin-button>
+      <lin-button plain icon="lin-icon-delete" circle type="sucess"></lin-button>
+      <lin-button plain icon="lin-icon-delete" circle type="info"></lin-button>
+      <lin-button plain icon="lin-icon-delete" circle type="warning"></lin-button>
+      <lin-button plain icon="lin-icon-delete" circle type="danger"></lin-button>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-
+  methods: {
+    fn () {
+      console.log(123)
+    }
+  }
 }
 </script>
 
