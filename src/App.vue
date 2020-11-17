@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="row">
-      <lin-button @click="fn">按钮</lin-button>
+      <lin-button disabled @click="fn">按钮</lin-button>
       <lin-button type="primary">按钮</lin-button>
       <lin-button type="sucess">按钮</lin-button>
       <lin-button type="info">按钮</lin-button>
@@ -34,6 +34,15 @@
       <lin-button plain circle type="info">按钮</lin-button>
       <lin-button plain circle type="warning">按钮</lin-button>
       <lin-button plain circle type="danger">按钮</lin-button>
+    </div>
+
+     <div class="row">
+      <lin-button plain disabled circle>按钮</lin-button>
+      <lin-button plain disabled circle type="primary">按钮</lin-button>
+      <lin-button plain disabled circle type="sucess">按钮</lin-button>
+      <lin-button plain disabled circle type="info">按钮</lin-button>
+      <lin-button plain disabled circle type="warning">按钮</lin-button>
+      <lin-button plain disabled circle type="danger">按钮</lin-button>
     </div>
 
     <div class="row">

@@ -3,8 +3,10 @@
     'is-plain': plain,
     'is-round': round,
     'is-circle': circle,
+    'is-disabled': disabled,
   }]"
   @click="handleClick"
+  :disabled="disabled"
   >
     <i v-if="icon" :class="icon"></i>
     <span v-if="$slots.default"><slot></slot></span>
@@ -34,6 +36,10 @@ export default {
     icon: {
       type: String,
       default: ''
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   created () {
